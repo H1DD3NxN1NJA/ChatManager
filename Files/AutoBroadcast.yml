@@ -1,0 +1,31 @@
+Auto_Broadcast:
+  Enable: true
+  Enable_Header_And_Footer: true
+  Header: "&7*&7&m--------------------------------&7*"
+  Footer: "&7*&7&m--------------------------------&7*"
+  Prefix: "&7[&6AutoBroadcast&7] "
+
+#The interval in seconds between every message.
+Interval: 300
+
+#Play a sound when a message is broadcasted, if you want no sound do Sound: ''
+Sound: 'ORB_PICKUP'
+
+Messages:
+  world:
+    - "&aWelcome to the server!"
+    - "&aHope you enjoy our server!"
+    - "&aJoin our discord <Link>"
+    - "&aThis server is running the plugin ChatManager by H1DD3NxN1NJA"
+    - "&bYou can edit these in the ChatManager > AutoBroadcast.yml"
+  world_nether:
+    - "&7The nether is a scary place"
+    - "&aWelcome to the server!"
+    - "&aHope you enjoy our server!"
+    - "&aJoin our discord <Link>"
+    - "&aThis server is running the plugin ChatManager by H1DD3NxN1NJA"
+    - "&bYou can edit these in the ChatManager > AutoBroadcast.yml"
+  world_the_end:
+    - "&aThe end world is a scary place"
+    - "&aWatch out for the ender dragon!"
+    - "&cDon't make eye contact with the enderman!"
