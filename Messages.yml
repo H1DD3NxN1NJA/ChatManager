@@ -1,0 +1,136 @@
+#=================================================================================================#
+#                                 Main Messages File of Chat Manager
+#=================================================================================================#
+#
+#    If you need any plugin support, feel free to join our discord server
+#    or private message me H1DD3NxN1NJA on Spigot.
+#
+#    Discord Link: https://discord.gg/n9A9xtA
+#
+#=================================================================================================#
+#
+# Information:
+#
+#   Color Codes are supported with the "&" character.
+#    - To view a list of COLOR CODES you can do /Colors in-game.
+#    - To view a list of FORMAT CODES you can do /Formats in-game.
+#
+#=================================================================================================#
+
+Message:
+  Prefix: "&b[&6Chat-Manager&b]&r"
+  No_Permission: "{Prefix} &cYou don't have the permissions to do this!"
+  Player_Not_Found: "{Prefix} &cThe player &d{target} &ccan not be found!"
+  Reload: "{Prefix} &aConfig Reloaded!"
+
+#=================================================================================================#
+# Anti-Advertising Messages
+#=================================================================================================#
+Anti_Advertising:
+  Message: "{Prefix} &cSorry, but you cannot advertise on this server."
+  Notify_Staff_Format: "&7[Anti-Advertise] &f{player}: &7{message}!"
+  
+#=================================================================================================#
+# Anti-Bot Messages
+#=================================================================================================#
+Anti_Bot:
+  Deny_Chat_Message: "{Prefix} &cYou must move one block before talking in chat."
+  Deny_Command_Message: "{Prefix} &cYou must move one block before executing commands."
+  
+#=================================================================================================#
+# Anti-Caps Message
+#=================================================================================================#
+Anti_Caps:
+  Message_Chat: "{Prefix} &cPlease do not use caps in chat."
+  Message_Commands: "{Prefix} &cPlease do not use caps in commands."
+  
+#=================================================================================================#
+# Anti-Spam Messages
+#=================================================================================================#
+Anti_Spam:
+  Chat:
+    Repetitive_Message: "{Prefix} &cPlease do not repeat the same message."
+    Delay_Message: "{Prefix} &cPlease wait &a{Time} seconds &cbefore sending another message!"
+  Command:
+    Repetitive_Message: "{Prefix} &cPlease do not repeat the same command."
+    Delay_Message: "{Prefix} &cPlease wait &a{Time} seconds &cbefore sending another command!"
+    
+#=================================================================================================#
+# Anti-Swear Messages
+#=================================================================================================#
+Anti_Swear:
+  Swear_Message: "{Prefix} &cPlease do not curse in chat!"
+  Word_Added: "{Prefix} &aYou have added the word &b{word} &ato the list of banned words!"
+  Word_Exists: "{Prefix} &cThe word &b{word} &cis already added to the list of banned words!"
+  Word_Removed: "{Prefix} &aYou have removed the word &b{word} &afrom the list of banned words!"
+  Word_Not_Found: "{Prefix} &cThe word &b{word} &cis not in the list of banned words!"
+  Notify_Staff_Format: "&7[Anti-Swear] &f{player}: &7{message}!"
+  
+#=================================================================================================#
+# Banned Commands Messages
+#=================================================================================================#
+Banned_Commands:
+  Message: "{Prefix} &cYou do not have permission to use the command &d/{command}&c!"
+  Command_Added: "{Prefix} &aYou have added the command &d{command} &ato the list of banned commands!"
+  Command_Exists: "{Prefix} &cThe command &d{command} &cis already added to the list of banned commands!"
+  Command_Removed: "{Prefix} &aYou have removed the command &d{command} &afrom the list of banned commands!"
+  Command_Not_Found: "{Prefix} &cThe command &d{command} &cis not in the list of banned commands!"
+  Notify_Staff_Format: "&7[Blocked-Cmd] &f{player}: &7{command}"
+  
+#=================================================================================================#
+# Clear Chat Messages
+#=================================================================================================#
+Clear_Chat:
+  Staff_Message: "{Prefix} &eChat has been cleared by {player}"
+  Broadcast_Message:
+  - "&f*&c&m--------------------------------------------&f*"
+  - "&eThe chat has been cleared by {player}"
+  - "&f*&c&m--------------------------------------------&f*"
+  
+#=================================================================================================#
+# Command Spy Messages
+#=================================================================================================#
+Command_Spy:
+  Format: "&7[Command-Spy] {player}: &b{command}"
+  Enabled: "{Prefix} &aCommand Spy has been Enabled."
+  Disabled: "{Prefix} &cCommand Spy has been Disabled."
+  
+#=================================================================================================#
+# Mute Chat Messages
+#=================================================================================================#
+Mute_Chat:
+  Denied_Message: "{Prefix} &cYou are not able to talk in chat right now!"
+  Broadcast_Messages:
+    Enabled: "{Prefix} &aChat has been Enabled by {player}!"
+    Disabled: "{Prefix} &cChat has been Disabled by {player}!"
+  Blocked_Commands:
+    Message: "{Prefix} &cYou are not allowed to use that command when the chat is muted!"
+    
+#=================================================================================================#
+# Per-World Chat Messages
+#=================================================================================================#
+Per_World_Chat:
+  Bypass_Enabled: "{Prefix} &aPer-world chat bypass has been enabled!"
+  Bypass_Disabled: "{Prefix} &cPer-world chat bypass has been disabled!"
+  
+#=================================================================================================#
+# Private Message Messages
+#=================================================================================================#
+Private_Message:
+  Recipient_Not_Found: "{Prefix} &cYou have nobody to reply to!"
+  Self: "{Prefix} &cYou cannot message yourself!"
+  
+#=================================================================================================#
+# Social Spy Messages
+#=================================================================================================#
+Social_Spy:
+  Format: "&b&l(*)&bSpy &9>> &7{player}: {command}"
+  Enabled: "{Prefix} &aSocial Spy has been enabled!"
+  Disabled: "{Prefix} &cSocial Spy has been disabled!"
+  
+#=================================================================================================#
+# Staff Chat Messages
+#=================================================================================================#
+Staff_Chat:
+  Enabled: "{Prefix} &aStaff Chat has been Enabled"
+  Disabled: "{Prefix} &cStaff Chat has been Disabled"
