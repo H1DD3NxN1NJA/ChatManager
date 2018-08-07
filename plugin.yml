@@ -1,8 +1,8 @@
-name: ChatManager
-version: 2.4.5
+name: ${project.name}
+version: ${project.version}
 main: me.H1DD3NxN1NJA.ChatManager.Main
 author: H1DD3NxN1NJA
-description: Chat Manager
+description: An advanced chat management plugin that has everything you need to keep your chat nice and clean.
 softdepend: [PlaceHolderAPI|Vault]
 api-version: 1.13
 
