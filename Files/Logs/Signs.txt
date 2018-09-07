@@ -1,1 +1,4 @@
-
+#=================================================================================================#
+Every message that is written on signs will be logged into this file. You’ll get the date it was created, 
+the signs location, the players name, the line the text was written on, and the message.
+#=================================================================================================#
