@@ -46,6 +46,10 @@ permissions:
             chatmanager.antiSwear.add: true
             chatmanager.antiSwear.list: true
             chatmanager.antiSwear.remove: true
+            chatmanager.autobroadcast: true
+            chatmanager.autobroadcast.add: true
+            chatmanager.autobroadcast.create: true
+            chatmanager.autobroadcast.list: true
             chatmanager.bannedCommands.add: true
             chatmanager.bannedCommands.list: true
             chatmanager.bannedCommands.remove: true
