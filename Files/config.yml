@@ -27,32 +27,75 @@
 #=================================================================================================#
 Anti_Advertising:
 
-  Enable: true
+  Chat:
+    
+    #Block advertising in chat.
+    Enable: true
   
-  #Should the anti advertising checker be more sensitive?
-  #WARNING! May cause a lot of false positives!
-  Increase_Sensitivity: false
+    #Should the anti advertising checker be more sensitive? This may cause false positives.
+    Increase_Sensitivity: false
 
-  #Should staff get notified when a player advertises in chat or commands?
-  Notify_Staff: true
+    #Should staff get notified when a player advertises in chat?
+    Notify_Staff: true
   
-  #Should a command be executed to the player that advertises?
-  Execute_Command: false
+    #Should a command be executed to the player that advertises?
+    Execute_Command: false
 
-  #The command that is executed when a player advertises.
-  #Set this section to Executed_Command: '' to disable
-  Executed_Command: kick {player} Please do not advertise in chat
+    #The command that is executed when a player advertises.
+    #Set this section to Executed_Command: '' to disable
+    Executed_Command: kick {player} Please do not advertise in chat
 
-  #Every time a player advertises in chat, their message will be logged in the Advertisements.txt file.
-  Log_Advertisers: true
+    #Every time a player advertises in chat, their message will be logged in the Advertisements.txt file.
+    Log_Advertisers: true
+    
+  Commands:
+  
+    #Block advertising in commands.
+    Enable: true
+  
+    #Should the anti advertising checker be more sensitive? This may cause false positives.
+    Increase_Sensitivity: false
 
-  #IP-Addresses that can be used in chat. CASE SENSITIVE!
+    #Should staff get notified when a player advertises in commands?
+    Notify_Staff: true
+  
+    #Should a command be executed to the player that advertises?
+    Execute_Command: false
+
+    #The command that is executed when a player advertises.
+    #Set this section to Executed_Command: '' to disable
+    Executed_Command: kick {player} Please do not advertise in chat
+
+    #Every time a player advertises in commands, their message will be logged in the Advertisements.txt file.
+    Log_Advertisers: true
+    
+  Signs:
+  
+    #Block advertising on signs. 
+    Enable: true
+  
+    #Should the anti advertising checker be more sensitive? This may cause false positives.
+    Increase_Sensitivity: false
+
+    #Should staff get notified when a player advertises on a sign?
+    Notify_Staff: true
+  
+    #Should a command be executed to the player that advertises?
+    Execute_Command: false
+
+    #The command that is executed when a player advertises.
+    #Set this section to Executed_Command: '' to disable
+    Executed_Command: kick {player} Please do not advertise in chat
+
+    #Every time a player advertises on signs, their message will be logged in the Advertisements.txt file.
+    Log_Advertisers: true
+
+  #Websites that wont be blocked if said in chat, commands, or signs.
   Whitelist:
-  - "Google.com"
+  - "google.com"
 
 #=================================================================================================#
-# Prevent players from executing commands, 
-# or typing in chat until they move when they join your server.
+# Prevent players from executing commands, or typing in chat until they move when they join your server.
 #=================================================================================================#
 Anti_Bot:
 
@@ -104,37 +147,78 @@ Anti_Spam:
     Block_Repetitive_Commands: true
 
 #=================================================================================================#
-# Prevent players from swearing in chat.
+# Prevent players from swearing in chat, comamnds, and signs.
 #=================================================================================================#
 Anti_Swear:
 
-  Enable: true
+  Chat:
+    
+    #Block swearing in chat
+    Enable: true
   
-  #Should the anti-swear checker be more sensitive?
-  #WARNING! May cause a lot of false positives!
-  Increase_Sensitivity: false
+    #Should the anti-swear checker be more sensitive? This may cause false positives.
+    Increase_Sensitivity: false
+    
+    #Should staff get notified when a player swears in chat?
+    Notify_Staff: true
+    
+    #Should a command be executed when a player swears in chat?
+    Execute_Command: true
 
-  #Should staff get notified when a player swears in chat or commands?
-  Notify_Staff: true
-
-  #Should a command be executed to the player that swears?
-  Execute_Command: true
-
-  #The command that is executed when a player swears.
-  #Set this section to Executed_Command: '' to disable
-  Executed_Command: kick {player} Please do not swear in chat
+    #The command that is executed when a player swears in chat.
+    #Set this section to Executed_Command: '' to disable.
+    Executed_Command: kick {player} Please do not swear in chat
+    
+    #Every time a player swears in chat their message will be logged in the Swears.txt file.
+    Log_Swearing: true
   
-  #Block swearing in commands.
-  Block_Commands: true
+  Commands:
   
-  #If a player executes one of these commands with a swear word in it, the command will not be blocked.
-  Whitelisted_Commands:
-  - "/report"
-  - "/login"
-  - "/register"
+    #Block swearing in commands.
+    Enable: true
+    
+    #Should the anti-swear checker be more sensitive? This may cause false positives.
+    Increase_Sensitivity: false
+  
+    #If a player executes one of these commands with a swear word in it, the command will not be blocked.
+    Whitelisted_Commands:
+    - "/report"
+    - "/login"
+    - "/register"
+    
+    #Should staff get notified when a player swears in commands?
+    Notify_Staff: true
+    
+    #Should a command be executed when a player swears in commands?
+    Execute_Command: true
 
-  #Every time a player swears in chat, their message will be logged in the Swears.txt file.
-  Log_Swearing: true
+    #The command that is executed when a player swears in commands.
+    #Set this section to Executed_Command: '' to disable.
+    Executed_Command: kick {player} Please do not swear in commands
+    
+    #Every time a player swears in commands their message will be logged in the Swears.txt file.
+    Log_Swearing: true
+    
+  Signs:
+  
+    #Block swearing on signs.
+    Enable: true
+    
+    #Should the anti-swear checker be more sensitive? This may cause false positives.
+    Increase_Sensitivity: false
+  
+    #Should staff get notified when a player swears on signs?
+    Notify_Staff: true
+
+    #Should a command be executed when a player swears on signs?
+    Execute_Command: true
+
+    #The command that is executed when a player swears on signs.
+    #Set this section to Executed_Command: '' to disable
+    Executed_Command: kick {player} Please do not swear on signs
+    
+    #Every time a player swears on signs their message will be logged in the Swears.txt file.
+    Log_Swearing: true
 
 #=================================================================================================#
 # Prevent players from using certain commands.
@@ -205,6 +289,25 @@ Broadcast_Commands:
         
 #=================================================================================================#
 # Per-Group chat formats. REQUIRES VAULT TO WORK!!!!!
+# Available Placeholders:
+#   - {message} - Shows the players message.
+#   - {player} - Shows the players name.
+#   - {displayname} - Shows the players displayname.
+#   - {world} - Shows the world the player is currently in.
+#   - {vault_prefix} - Shows the players prefix.
+#   - {vault_suffix} - Shows the players suffix.
+#   - {vault_rank} - Shows the players rank.
+#   - {ess_player_balance} - Shows the players balance.
+#   - {ess_player_nickname} - Shows the players nickname.
+#   - {factions_faction} - Shows the players faction name.
+#   - {factions_rel_color} - Shows the factions relation color.
+#   - {factions_role_prefix} - Shows the players role (-|+|*|**).
+#   - {factions_role_name} - Shows the players role name (Member, Officer, Leader).
+#   - {factions_player_power} - Shows the players current power level.
+#   - {factions_player_max_power} - Shows the players max power level.
+#   - {factions_faction_power} - Show the factions current power level.
+#   - {factions_faction_max_power} - Shows the factions max power level.
+#   - You can use PlaceholderAPI for more placeholders.
 #=================================================================================================#
 Chat_Format:
 
@@ -216,12 +319,14 @@ Chat_Format:
   #Chat Formats are set depending on what permission group the player is in.
   #If a player is in the permission group named "Default" they will have the default chat format.
   Groups:
-    Default: 
+    Default:
       Format: "&8[&7Default&8] &7{player} &9> &7{message}"
-    VIP: 
+    VIP:
       Format: "&8[&5VIP&8] &7{displayname} &9> &7{message}"
-    Moderator: 
-      Format: "&b[&6Moderator&b] &a[&b{world}&a] &b{player} &9> &e{message}"
+    Moderator:
+      Format: "&7[&f{world}&7] &a[&3Moderator&a] &b{player} &9> &e{message}"
+    Owner:
+      Format: "&b[&6Owner&b] {player} &9>> &e{message}"
       
 #=================================================================================================#
 # Players can only send messages to other players that are in range.
@@ -272,6 +377,9 @@ Logs:
   #Should every command that is executed be logged in the Commands.txt file?
   Log_Commands: true
   
+  #Should every message placed on a sign be logged in the Signs.txt file?
+  Log_Signs: true
+  
   #Commands that wont be logged in the Command.txt file.
   #Commands in the Blacklist_Commands list must be lowercase.
   Blacklist_Commands:
@@ -287,9 +395,31 @@ Messages:
 
   First_Join_Message: "&eWelcome &b{player} &eto the server!"
 
-  Join: "&b{player} &ejoined the server."
+  Join_Message: "&b{player} &ejoined the server."
 
-  Quit: "&b{player} &eleft the server."
+  Quit_Message: "&b{player} &eleft the server."
+  
+#A actionbar will be sent to the player that joined the server.
+Actionbar_Messages:
+
+  Enable: true
+  
+  First_Join_Message: "&eWelcome &b{player} &eto {server_name}!"
+
+  Join_Message: "&eWelcome back &b{player}!"
+  
+#A title will be sent to the player that joins the server.
+Title_Messages:
+
+  Enable: true
+  
+  First_Join_Title:
+    Header: "&eWelcome"
+    Footer: "&b{player} to {server_name}"
+    
+  Join_Title:
+    Header: "&eWelcome Back"
+    Footer: "&b{player} to {server_name}"
 
 #=================================================================================================#
 # When players join your server, welcome them with a Message of the Day.
@@ -302,12 +432,13 @@ MOTD:
   Delay: 2
 
   Message:
-  - "&d&m------------------------------------"
-  - "&eWelcome to the server &d{player}!"
-  - "&eHope you enjoy your stay!"
+  - "&7&m------------------------------------"
+  - "&aWelcome to the server &b{player}&a!"
   - ""
-  - "&eYou can change this message in the ChatManager - Config.yml"
-  - "&d&m------------------------------------"
+  - "&aIf you need any help please message any online staff member."
+  - ""
+  - "&aYou can change this message in the ChatManager - Config.yml"
+  - "&7&m------------------------------------"
 
 #=================================================================================================#
 # Mute Chat.
@@ -320,27 +451,21 @@ Mute_Chat:
   #Should staff get notified when chat is muted?
   Notify_Staff: false
 
-  #Hide the following messages while chat is muted.
-  Silence:
-    First_Join_Message: false
-    Join_Message: false
-    Quit_Message: false
-
   Disable_Commands: true
 
   #Commands that cannot be executed when chat is muted 
   #if the boolean "Disable_Commands" is set to true.
   Disabled_Commands:
-  - message
-  - msg
-  - m
-  - tell
-  - t
-  - whisper
-  - w
-  - me
-  - reply
-  - r
+  - "/message"
+  - "/msg"
+  - "/m"
+  - "/tell"
+  - "/t"
+  - "/whisper"
+  - "/w"
+  - "/me"
+  - "/reply"
+  - "/r"
 
 #=================================================================================================#
 # Players can only talk to other players that are in the same world as them!
@@ -368,23 +493,28 @@ Private_Messages:
 Rules:
 
   Enable: true
+
+#=================================================================================================#
+# The server name used in {server_name} variable. Colors are supported.
+#=================================================================================================#
+Server_Name: "Server Name"
   
 #=================================================================================================#
 # Staff can see what players type in certain commands.
 #=================================================================================================#
 Social_Spy:
 
-  #These commands will be monitored when socialspy is enabled.
+  #These commands will be monitored when social spy is enabled.
   Command_List:
-  - /message
-  - /msg
-  - /m
-  - /whisper
-  - /w
-  - /tell
-  - /t
-  - /reply
-  - /r
+  - "/message"
+  - "/msg"
+  - "/m"
+  - "/whisper"
+  - "/w"
+  - "/tell"
+  - "/t"
+  - "/reply"
+  - "/r"
 
 #=================================================================================================#
 # Talk silently with staff without everyone else on the server seeing.
