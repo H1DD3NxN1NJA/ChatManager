@@ -22,8 +22,11 @@ Chat_Bot:
   
   Bot_Prefix: "&cChatBot &9>> &r"
   
-  #Broadcast the bots response to everyone on the server
+  #Broadcast the bots response to everyone on the server.
   Broadcast_Response: true
+  
+  #The time it takes the bot to respond to a player.
+  Response_Time: 5
   
   #The sound that is played when the bot responds to someones question.
   #Do Sound: '' to disable
