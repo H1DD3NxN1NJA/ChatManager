@@ -6,251 +6,76 @@ description: An advanced chat management plugin that has everything you need to 
 softdepend: [PlaceHolderAPI|Vault]
 api-version: 1.13
 
-commands:
-    ChatManager:
-        description: Main command for the plugin chat manager.
-        usage: /<command> <help|reload|>
-        aliases: [cm]
-    Announcement:
-        description: Announce a message to the entire server.
-        usage: /<command> <message>
-        aliases: [announce]
-    AntiSwear:
-        description: Shows a list of commands for the anti-swear feature.
-        usage: /<command> <help|add|remove|list>
-        aliases: [as]
-    BannedCommands:
-        description: Shows a list of commands for the banned commands feature.
-        usage: /<command> <help|add|remove|list>
-        aliases: [bcmd]
-    Broadcast:
-        usage: /<command> <message>
-        aliases: [bc]
-        description: Broadcast a message to the entire server.
-    ClearChat:
-        description: Clears chat for everyone on the server.
-        usage: /<command>
-        aliases: [cc]
-    Colors:
-        usage: /<command>
-        description: Shows a list of color codes.
-    CommandSpy:
-        description: See what commands every player types on the server.
-        usage: /<command>
-        aliases: [cspy,cmdspy]
-    Formats:
-        description: Shows a list of format codes.
-        usage: /<command>
-    Message:
-        description: Sends a private message to the specified player.
-        usage: /<command> <player> <message>
-        aliases: [m,w,t,pm,msg,whisper,tell,privatemessage]
-    MuteChat:
-        description: Mutes the server chat preventing players from talking in chat.
-        usage: /<command>
-        aliases: [mc]
-    PerWorldChat:
-        description: Allow players to see what you type in chat in every world.
-        usage: /<command> <bypass>
-        aliases: [pwc]
-    Ping:
-        description: Shows your current ping, or other players ping.
-        usage: /<command> <player>
-    Reply:
-        description: Quickly reply to the last player to message you.
-        usage: /<command> <message>
-        aliases: [r]
-    SocialSpy:
-        description: Spy on players and see what they message to other players.
-        usage: /<command>
-    StaffChat:
-        description: Send private messages to all staff on the server.
-        usage: /<command>
-        aliases: [sc,schat]
-    Warning:
-        description: Sends a warning message to the entire server.
-        usage: /<command> <message>
-        aliases: [alert]
-        
 permissions:
-    ChatManager.AntiSwear.Add:
-        description: Permission to add a word to the bannedwords.yml file.
-        default: op
-    ChatManager.AntiSwear.List:
-        description: Permission to view a list of all the banned words.
-        default: op
-    ChatManager.AntiSwear.Remove:
-        description: Permission to remove a word from the bannedwords.yml file.
-        default: op
-    ChatManager.BannedCommands.Add:
-        description: Permission to add a command to the bannedcommands.yml file.
-        default: op
-    ChatManager.BannedCommands.List:
-        desctiption: Permission to view a list of all the banned commands.
-        default: op
-    ChatManager.BannedCommands.Remove:
-        description: Permission to remove a command from the bannedcommands.yml file.
-        default: op
-    ChatManager.Announcement:
-        description: Permission to use the command /announcement.
-        default: op
-    ChatManager.Broadcast:
-        description: Permission to use the command /broadcast.
-        default: op
-    ChatManager.ChatColor:
-        description: Permission to use color codes in chat.
-        default: op
-    ChatManager.Colors:
-        description: Permission to see a list of color codes.
-        default: op
-    ChatManager.Formats:
-        description: Permission to see a list of format codes.
-        default: op
-    ChatManager.ClearChat:
-        description: Permission to use the command /clearchat.
-        default: op
-    ChatManager.CommandSpy:
-        description: Permission to use the command /commandspy.
-        default: op
-    ChatManager.MuteChat:
-        description: Permission to use the command /mutechat.
-        default: op
-    ChatManager.PrivateMessage:
-        description: Permission to send private messages.
-        default: op
-    ChatManager.Reload:
-        description: Permission to reload all the configuration files.
-        default: op
-    ChatManager.Rules:
-        description: Permission to use the command /rules.
-        default: true
-    ChatManager.SocialSpy:
-        decription: Permission to use the command /socialspy.
-        default: op
-    ChatManager.StaffChat:
-        description: Permission to use the command /staffchat.
-        default: op
-    ChatManager.Warning:
-        description: Permission to use the command /warning.
-        default: op
-    ChatManager.PerWorldChat.Bypass:
-        desctiption: Permission to use the command /perworldchat.
-        default: op
-    ChatManager.Ping:
-        description: Permission to view your current ping.
-        default: op
-    ChatManager.Ping.Others:
-        description: Permission to view others players current ping.
-        default: op
-    ChatManager.Notify.AntiAdvertising:
-      description: Permission to get notified when players advertise in chat.
-      default: op
-    ChatManager.Notify.AntiSwear:
-        description: Permission to get notified when a player swears in chat.
-        default: op
-    ChatManager.Notify.BannedCommands:
-        description: Permission to get notified when a player uses a banned command.
-        default: op
-    ChatManager.Bypass.AntiBot:
-        description: Permission to talk in chat without moving on join.
-        default: op
-    ChatManager.Bypass.AntiSwear:
-        description: Permission to bypass the anti-swear checker.
-        default: op
-    ChatManager.Bypass.BannedCommands:
-        description: Permission to bypass the banned commands checker.
-        default: op
-    ChatManager.Bypass.Caps:
-        description: Permission to bypass caps checker.
-        default: op
-    ChatManager.Bypass.ClearChat:
-        description: Permission to bypass clear chat.
-        default: op
-    ChatManager.Bypass.CommandSpy:
-        description: Permission to bypass command spy.
-        default: op
-    ChatManager.Bypass.Dupe.Chat:
-        description: Permission to use repetative messages.
-        default: op
-    ChatManager.Bypass.Dupe.Command:
-        description: Permission to use repetative commands.
-        default: op
-    Chatmanager.Bypass.ChatDelay:
-        description: Permission to bypass the chat delay.
-        default: op
-    ChatManager.Bypass.CommandDelay:
-        Description: Permission to bypass the command delay.
-        default: op
-    ChatManager.Bypass.Grammar:
-        description: Permission to bypass the grammar checks.
-        default: op
-    ChatManager.Bypass.MuteChat:
-        description: Permission to talk in chat when chat is disabled.
-        default: op
-    ChatManager.Bypass.AntiAdvertising:
-        description: Permission to bypass the anti-advertising checker.
-        default: op
-    ChatManager.Bypass.ChatRadius:
-        description: Permission to bypass the chat radius.
-        default: op
-    ChatManager.Bypass.SocialSpy:
-        description: Permission to bypass being seen from social spy.
-        default: op
-    Chatmanager.Bypass.All:
+    chatmanager.bypass.all:
         description: Give players access to bypass every check.
         default: false
         children:
-            ChatManager.Bypass.AntiAdvertising: true
-            ChatManager.Bypass.AntiBot: true
-            ChatManager.Bypass.AntiSwear: true
-            ChatManager.Bypass.BannedCommands: true
-            ChatManager.Bypass.Caps: true
-            Chatmanager.Bypass.ChatDelay: true
-            ChatManager.Bypass.ChatRadius: true
-            ChatManager.Bypass.CommandDelay: true
-            ChatManager.Bypass.ClearChat: true
-            ChatManager.Bypass.CommandSpy: true
-            ChatManager.Bypass.Dupe.Chat: true
-            ChatManager.Bypass.Dupe.Command: true
-            ChatManager.Bypass.Grammar: true
-            ChatManager.Bypass.MuteChat: true
-            ChatManager.Bypass.SocialSpy: true
-    ChatManager.Commands.All:
+            chatmanager.bypass.antiadvertising: true
+            chatmanager.bypass.antibot: true
+            chatmanager.bypass.antiswear: true
+            chatmanager.bypass.bannedcommands: true
+            chatmanager.bypass.caps: true
+            chatmanager.bypass.chatdelay: true
+            chatmanager.bypass.chatradius: true
+            chatmanager.bypass.clearchat: true
+            chatmanager.bypass.commanddelay: true
+            chatmanager.bypass.commandspy: true
+            chatmanager.bypass.dupe.chat: true
+            chatmanager.bypass.dupe.command: true
+            chatmanager.bypass.grammar: true
+            chatmanager.bypass.mutechat: true
+            chatmanager.bypass.socialspy: true
+    chatmanager.formats.all:
+        description: Give players access to use all color and format codes in chat and on signs.
+        default: false
+        children:
+            chatManager.format.color: true
+            chatManager.format.magic: true
+            chatManager.format.bold: true
+            chatManager.format.strikethrough: true
+            chatManager.format.underline: true
+            chatManager.format.italic: true
+            chatManager.sign.color: true
+            chatManager.sign.format: true
+    chatmanager.commands.all:
         description: Give players access to every command.
         default: false
         children:
-            ChatManager.AntiSwear.Add: true
-            ChatManager.AntiSwear.List: true
-            ChatManager.AntiSwear.Remove: true
-            ChatManager.BannedCommands.Add: true
-            ChatManager.BannedCommands.List: true
-            ChatManager.BannedCommands.Remove: true
-            ChatManager.Announcement: true
-            ChatManager.Broadcast: true
-            ChatManager.ClearChat: true
-            ChatManager.ClearChat.Silent: true
-            ChatManager.CommandSpy: true
-            ChatManager.MuteChat: true
-            ChatManager.PerWorldChat.Bypass: true
-            ChatManager.PrivateMessage: true
-            ChatManager.Reload: true
-            ChatManager.Rules: true
-            CbatManager.SocialSpy: true
-            ChatManager.StaffChat: true
-            ChatManager.Ping: true
-            ChatManager.Ping.Others: true
-            ChatManager.Warning: true
-    ChatManager.Notify.All:
+            chatmanager.antiSwear.add: true
+            chatmanager.antiSwear.list: true
+            chatmanager.antiSwear.remove: true
+            chatmanager.bannedCommands.add: true
+            chatmanager.bannedCommands.list: true
+            chatmanager.bannedCommands.remove: true
+            chatmanager.announcement: true
+            chatmanager.broadcast: true
+            chatmanager.clearchat: true
+            chatmanager.commandcpy: true
+            chatmanager.mutechat: true
+            chatmanager.perworldchat: true
+            chatmanager.ping: true
+            chatmanager.ping.others: true
+            chatmanager.preview.title: true
+            chatmanager.preview.actionbar: true
+            chatmanager.privatemessage: true
+            chatmanager.reload: true
+            chatmanager.rules: true
+            cbatmanager.socialspy: true
+            chatmanager.staffchat: true
+            chatmanager.warning: true
+    chatmanager.notify.all:
         description: Gets notified everytime a player breaks the rules.
         default: false
         children:
-            ChatManager.Notify.AntiAdvertising: true
-            ChatManager.Notify.AntiSwear: true
-            ChatManager.Notify.BannedCommands: true
-    ChatManager.*:
+            chatmanager.notify.antiadvertising: true
+            chatmanager.notify.antiswear: true
+            chatmanager.notify.bannedcommands: true
+    chatmanager.*:
         description: Give players with op everything by default.
         default: op
         children:
-            ChatManager.Bypass.All: true
-            ChatManager.Commands.All: true
-            ChatManager.Notify.All: true
+            chatmanager.bypass.all: true
+            chatmanager.commands.all: true
+            chatmanager.notify.all: true
+            chatmanager.formats.all: true
