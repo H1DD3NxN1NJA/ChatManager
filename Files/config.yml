@@ -219,6 +219,24 @@ Anti_Swear:
     
     #Every time a player swears on signs their message will be logged in the Swears.txt file.
     Log_Swearing: true
+    
+#=================================================================================================#
+# Prevent players from using special chat characters.
+#=================================================================================================#
+Anti_Unicode:
+  
+  #Block special characters in chat.
+  Enable: true
+    
+  #Should staff get notified when a player uses special characters in chat?
+  Notify_Staff: true
+    
+  #Should a command be executed when a player uses special characters in chat?
+  Execute_Command: false
+
+  #The command that is executed when a player uses special characters in chat.
+  #Set this section to Executed_Command: '' to disable
+  Executed_Command: kick {player} Please do not use special characters in chat.
 
 #=================================================================================================#
 # Prevent players from using certain commands.
@@ -300,7 +318,6 @@ Broadcast_Commands:
 #   - {ess_player_balance} - Shows the players balance.
 #   - {ess_player_nickname} - Shows the players nickname.
 #   - {factions_faction} - Shows the players faction name.
-#   - {factions_rel_color} - Shows the factions relation color.
 #   - {factions_role_prefix} - Shows the players role (-|+|*|**).
 #   - {factions_role_name} - Shows the players role name (Member, Officer, Leader).
 #   - {factions_player_power} - Shows the players current power level.
@@ -324,7 +341,7 @@ Chat_Format:
     VIP:
       Format: "&8[&5VIP&8] &7{displayname} &9> &7{message}"
     Moderator:
-      Format: "&7[&f{world}&7] &a[&3Moderator&a] &b{player} &9> &e{message}"
+      Format: "&a[&3Moderator&a] &b{player} &9> &e{message}"
     Owner:
       Format: "&b[&6Owner&b] {player} &9>> &e{message}"
       
@@ -398,8 +415,7 @@ Messages:
   Join_Message: "&b{player} &ejoined the server."
 
   Quit_Message: "&b{player} &eleft the server."
-  
-#A actionbar will be sent to the player that joined the server.
+
 Actionbar_Messages:
 
   Enable: true
@@ -407,8 +423,7 @@ Actionbar_Messages:
   First_Join_Message: "&eWelcome &b{player} &eto {server_name}!"
 
   Join_Message: "&eWelcome back &b{player}!"
-  
-#A title will be sent to the player that joins the server.
+
 Title_Messages:
 
   Enable: true
@@ -495,7 +510,7 @@ Rules:
   Enable: true
 
 #=================================================================================================#
-# The server name used in {server_name} variable. Colors are supported.
+# The server name used in {server_name} variable. Color codes are supported.
 #=================================================================================================#
 Server_Name: "Server Name"
   
