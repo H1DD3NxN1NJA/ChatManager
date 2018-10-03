@@ -82,6 +82,13 @@ Anti_Swear:
     Not_Found: "{Prefix} &7The word &c{word} &7is not in the list of swear words."
     
 #=================================================================================================#
+# Anti-Unicode Messages
+#=================================================================================================#
+Anti_Unicode:
+  Message: "{Prefix} &cPlease do not use special characters in chat."
+  Notify_Staff_Format: "&7[Anti-Unicode] &f{player}: &7{message}"
+    
+#=================================================================================================#
 # Auto-Broadcast Messages
 #=================================================================================================#
 Auto_Broadcast:
