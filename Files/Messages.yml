@@ -168,6 +168,13 @@ Staff_Chat:
   Disabled: "{Prefix} &cStaff chat has been disabled."
   
 #=================================================================================================#
+# ToggleChat Messages
+#=================================================================================================#
+Toggle_Chat:
+  Enabled: "{Prefix} &aToggle chat has been enabled, you will no longer receive chat messages."
+  Disabled: "{Prefix} &cToggle chat has been disabled, you will start receiving chat messages."
+  
+#=================================================================================================#
 # TogglePM Messages
 #=================================================================================================#
 TogglePM:
