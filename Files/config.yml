@@ -18,7 +18,7 @@
 #      - 1.9 and newer: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
 #      - 1.8 and older: http://docs.codelanx.com/Bukkit/1.8/org/bukkit/Sound.html
 #   
-#   3. All messages are in the Messages.yml file.
+#   3. All messages are in the Messages.yml file
 #
 #=================================================================================================#
   
@@ -228,10 +228,10 @@ Anti_Unicode:
   #Block special characters in chat.
   Enable: true
     
-  #Should staff get notified when a player uses special characters in chat?
+  #Should staff get notified when a player uses special characters?
   Notify_Staff: true
     
-  #Should a command be executed when a player uses special characters in chat?
+  #Should a command be executed when a player uses special characters?
   Execute_Command: false
 
   #The command that is executed when a player uses special characters in chat.
@@ -244,6 +244,10 @@ Anti_Unicode:
 Banned_Commands:
 
   Enable: true
+  
+  #Increase banned commands sensitivity so if you add the command /gamemode, 
+  #players wont be able to do /gamemode creative, /gamemode survival, etc.
+  Increase_Sensitivity: false
 
   #Should staff get notified when a player uses a banned command?
   Notify_Staff: true
@@ -307,24 +311,7 @@ Broadcast_Commands:
         
 #=================================================================================================#
 # Per-Group chat formats. REQUIRES VAULT TO WORK!!!!!
-# Available Placeholders:
-#   - {message} - Shows the players message.
-#   - {player} - Shows the players name.
-#   - {displayname} - Shows the players displayname.
-#   - {world} - Shows the world the player is currently in.
-#   - {vault_prefix} - Shows the players prefix.
-#   - {vault_suffix} - Shows the players suffix.
-#   - {vault_rank} - Shows the players rank.
-#   - {ess_player_balance} - Shows the players balance.
-#   - {ess_player_nickname} - Shows the players nickname.
-#   - {factions_faction} - Shows the players faction name.
-#   - {factions_role_prefix} - Shows the players role (-|+|*|**).
-#   - {factions_role_name} - Shows the players role name (Member, Officer, Leader).
-#   - {factions_player_power} - Shows the players current power level.
-#   - {factions_player_max_power} - Shows the players max power level.
-#   - {factions_faction_power} - Show the factions current power level.
-#   - {factions_faction_max_power} - Shows the factions max power level.
-#   - You can use PlaceholderAPI for more placeholders.
+# Available Placeholders: https://github.com/H1DD3NxN1NJA/ChatManager/wiki/Chat-Format#placeholders-top
 #=================================================================================================#
 Chat_Format:
 
@@ -336,14 +323,14 @@ Chat_Format:
   #Chat Formats are set depending on what permission group the player is in.
   #If a player is in the permission group named "Default" they will have the default chat format.
   Groups:
-    Default:
-      Format: "&8[&7Default&8] &7{player} &9> &7{message}"
+    Default: #The name of the group, this is case sensitive!
+      Format: "&8[&7Default&8] &7{player} &9> &7{message}" #The format you want the group to have.
     VIP:
       Format: "&8[&5VIP&8] &7{displayname} &9> &7{message}"
     Moderator:
       Format: "&a[&3Moderator&a] &b{player} &9> &e{message}"
     Owner:
-      Format: "&b[&6Owner&b] {player} &9>> &e{message}"
+      Format: "&b[&6Owner&b] {player} &9> &e{message}"
       
 #=================================================================================================#
 # Players can only send messages to other players that are in range.
@@ -351,6 +338,11 @@ Chat_Format:
 Chat_Radius:
 
   Enable: false
+  
+  #These prefixes will show with the {radius} placeholder in the chat format.
+  Local_Prefix: "&7[&cLocal&7]"
+  
+  Global_Prefix: "&7[&bGlobal&7]"
   
   #The maximum distance players will receive the senders messages.
   Block_Distance: 250
@@ -365,10 +357,23 @@ Clear_Chat:
 
   #Should staff get notified when chat is cleared?
   Notify_Staff: false
+  
+  #Clear players chat when they join the server.
+  Clear_On_Join: true
 
   #How many blank lines should be broadcasted in chat?
   Broadcasted_Lines: 300
 
+#=================================================================================================#
+# Command Spy
+#=================================================================================================#
+Command_Spy:
+  
+  #Commands that wont be shown in command spy.
+  Blacklist_Commands:
+  - "/login"
+  - "/register"
+  
 #=================================================================================================#
 # Correct player's grammar.
 #=================================================================================================#
@@ -494,9 +499,23 @@ Per_World_Chat:
 #=================================================================================================#
 Private_Messages:
 
-  Format_Sender: "&c&l(!) &f&l[&e&lYou &d-> &e{receiver}&f&l] &b"
-
-  Format_Receiver: "&c&l(!) &f&l[&e{player} &d-> &e&lYou&f&l] &b"
+  Sender:
+    Format: "&c&l(!) &f&l[&e&lYou &d-> &e{receiver}&f&l] &b"
+    Tooltip:
+    - "&3 ~~Private Message~~ "
+    - "&d&l(!) &7To {receiver}"
+    - ""
+    - "&d&nClick to reply"
+    Click_Command: "/r "
+    
+  Receiver:
+    Format: "&c&l(!) &f&l[&e{player} &d-> &e&lYou&f&l] &b"
+    Tooltip:
+    - "&3 ~~Private Message~~ "
+    - "&d&l(!) &7From {player}"
+    - ""
+    - "&d&nClick to reply"
+    Click_Command: "/r "
 
   #The sound thats played to the receiver
   #Do Sound: '' to disable
@@ -519,17 +538,8 @@ Server_Name: "Server Name"
 #=================================================================================================#
 Social_Spy:
 
-  #These commands will be monitored when social spy is enabled.
-  Command_List:
-  - "/message"
-  - "/msg"
-  - "/m"
-  - "/whisper"
-  - "/w"
-  - "/tell"
-  - "/t"
-  - "/reply"
-  - "/r"
+  #Turn on social spy when players with the correct permission join the server.
+  Enable_On_Join: true
 
 #=================================================================================================#
 # Talk silently with staff without everyone else on the server seeing.
