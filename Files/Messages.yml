@@ -20,7 +20,7 @@
 Message:
   Prefix: "&b[&6Chat-Manager&b]&r"
   No_Permission: "{Prefix} &cYou don't have the permissions to do this."
-  Player_Not_Found: "{Prefix} &7The player &c{target} &7can not be found."
+  Player_Not_Found: "{Prefix} &7The player &c{target} &7cannot be found."
   Reload: "{Prefix} &aConfig has been reloaded."
 
 #=================================================================================================#
@@ -149,6 +149,7 @@ Per_World_Chat:
 Private_Message:
   Recipient_Not_Found: "{Prefix} &cYou have nobody to reply to."
   Toggled: "{Prefix} &cThat player cannot receive messages right now."
+  Ignored: "{Prefix} &c{target} &7is currently ignoring you and cant receive any private messages."
   Self: "{Prefix} &cYou cannot message yourself."
   AFK: "{Prefix} &c{target} &7is currently afk."
   
@@ -156,7 +157,7 @@ Private_Message:
 # Social Spy Messages
 #=================================================================================================#
 Social_Spy:
-  Format: "&b&l(*)&bSpy &9>> &7{player}: {command}"
+  Format: "&b&l(*)&bSpy &f&l[&e{player} &d-> &e{receiver}&f&l] &b{message}"
   Enabled: "{Prefix} &aSocial Spy has been enabled."
   Disabled: "{Prefix} &cSocial Spy has been disabled."
   
