@@ -1,10 +1,9 @@
 name: ChatManager
-description: ChatManager
+description: Chat management plugin
 version: ${project.version}
 main: me.H1DD3NxN1NJA.ChatManager.Main
 author: H1DD3NxN1NJA
-depend: [PlaceholderAPI]
-softdepend: [Vault, Factions, Essentials, SuperVanish, Multiverse]
+softdepend: [PlaceholderAPI, Vault, Essentials, SuperVanish, DeluxeTags, Factions]
 api-version: 1.13
 
 permissions:
