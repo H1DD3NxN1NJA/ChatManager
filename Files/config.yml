@@ -440,6 +440,22 @@ Title_Messages:
   Join_Title:
     Header: "&eWelcome Back"
     Footer: "&b{player} to {server_name}"
+    
+#=================================================================================================#
+# When a player mentions another players name.
+#=================================================================================================#
+Mentions:
+
+  Enable: true
+  
+  #The sound thats played to the player thats mentioned. Do Sound: '' to disable.
+  Sound: ''
+  
+  #The title message thats sent to the player thats mentioned.
+  Title:
+    Enable: true
+    Header: "&cMentioned"
+    Footer: "&7You have been mentioned by {player}"
 
 #=================================================================================================#
 # When players join your server, welcome them with a Message of the Day.
