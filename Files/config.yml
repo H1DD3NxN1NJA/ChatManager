@@ -237,6 +237,11 @@ Anti_Unicode:
   #The command that is executed when a player uses special characters in chat.
   #Set this section to Executed_Command: '' to disable
   Executed_Command: kick {player} Please do not use special characters in chat.
+  
+  #Anything thats in this list won’t be blocked by the anti unicode checker.
+  Whitelist:
+  - "«"
+  - "»"
 
 #=================================================================================================#
 # Prevent players from using certain commands.
@@ -335,17 +340,29 @@ Chat_Format:
 #=================================================================================================#
 # Players can only send messages to other players that are in range.
 #=================================================================================================#
-Chat_Radius:
+Chat_Radius: 
 
   Enable: false
   
-  #These prefixes will show with the {radius} placeholder in the chat format.
-  Local_Prefix: "&7[&cLocal&7]"
+  #When players join the server, or if the plugin is hard reloaded (with plugman) players will be
+  #automatically put into this chat channel.
+  #Chat Channels: Local, Global, World.
+  Default_Channel: Local
   
-  Global_Prefix: "&7[&bGlobal&7]"
+  #The prefix thats sent in local chat.
+  Local_Chat_Prefix: "&7[&cLocal&7]"
+  
+  #The prefix thats sent in global chat.
+  Global_Chat_Prefix: "&7[&bGlobal&7]"
+  
+  #The prefix thats sent in world chat.
+  World_Chat_Prefix: "&7[&dWorld&7]"
   
   #The maximum distance players will receive the senders messages.
   Block_Distance: 250
+  
+  #Enable chat radius spy on join.
+  Enable_Spy_On_Join: false
 
 #=================================================================================================#
 # Clear Chat
@@ -368,6 +385,9 @@ Clear_Chat:
 # Command Spy
 #=================================================================================================#
 Command_Spy:
+
+  #Turn on command spy when players with the correct permission join the server.
+  Enable_On_Join: true
   
   #Commands that wont be shown in command spy.
   Blacklist_Commands:
@@ -480,12 +500,6 @@ MOTD:
 # Mute Chat.
 #=================================================================================================#
 Mute_Chat:
-
-  #Should mute chat messages be broadcasted to everyone on the server?
-  Broadcast: true
-
-  #Should staff get notified when chat is muted?
-  Notify_Staff: false
 
   Disable_Commands: true
 
