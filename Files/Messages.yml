@@ -92,8 +92,8 @@ Anti_Unicode:
 # Auto-Broadcast Messages
 #=================================================================================================#
 Auto_Broadcast:
-  List: "&c{world}'s &7auto-broadcast messages:"
-  Added: "{Prefix} &r{message} &7has been added to the world &c'{world}'&7!"
+  List: "&c{section}'s &7auto-broadcast messages:"
+  Added: "{Prefix} &r{message} &7has been added to the &c{section} &7messages&7!"
   Created: "{Prefix} &7Created the world &c'{world}' &7with the message &r{message}&7."
   
 #=================================================================================================#
@@ -106,6 +106,23 @@ Banned_Commands:
   Command_Removed: "{Prefix} &7You removed the command &c{command} &7from the list of banned commands."
   Command_Not_Found: "{Prefix} &7The command &c{command} &7is not in the list of banned commands."
   Notify_Staff_Format: "&7[Blocked-Cmd] &f{player}: &7{command}"
+  
+#=================================================================================================#
+# Chat Radius Messages
+#=================================================================================================#
+Chat_Radius:
+  Local_Chat:
+    Enabled: "{Prefix} &7You've entered &cLocal Chat&7! Do &c/ChatRadius global &7or &c/ChatRadius world &7to leave Local Chat!"
+    Already_Enabled: "{Prefix} &7You are already in local chat."
+  Global_Chat:
+    Enabled: "{Prefix} &7You've entered &cLocal Chat&7! Do &c/ChatRadius local &7or &c/ChatRadius world &7to leave Local Chat!"
+    Already_Enabled: "{Prefix} &7You are already in global chat."
+  World_Chat:
+    Enabled: "{Prefix} &7You've entered &cLocal Chat&7! Do &c/ChatRadius local &7or &c/ChatRadius global &7to leave Local Chat!"
+    Already_Enabled: "{Prefix} &7You are already in world chat."
+  Spy:
+    Enabled: "{Prefix} &7Chat Radius spy has been &aEnabled."
+    Disabled: "{Prefix} &7Chat Radius spy has been &cDisabled."
   
 #=================================================================================================#
 # Clear Chat Messages
