@@ -115,10 +115,10 @@ Chat_Radius:
     Enabled: "{Prefix} &7You've entered &cLocal Chat&7! Do &c/ChatRadius global &7or &c/ChatRadius world &7to leave Local Chat!"
     Already_Enabled: "{Prefix} &7You are already in local chat."
   Global_Chat:
-    Enabled: "{Prefix} &7You've entered &cLocal Chat&7! Do &c/ChatRadius local &7or &c/ChatRadius world &7to leave Local Chat!"
+    Enabled: "{Prefix} &7You've entered &cLocal Chat&7! Do &c/ChatRadius local &7or &c/ChatRadius world &7to leave Global Chat!"
     Already_Enabled: "{Prefix} &7You are already in global chat."
   World_Chat:
-    Enabled: "{Prefix} &7You've entered &cLocal Chat&7! Do &c/ChatRadius local &7or &c/ChatRadius global &7to leave Local Chat!"
+    Enabled: "{Prefix} &7You've entered &cLocal Chat&7! Do &c/ChatRadius local &7or &c/ChatRadius global &7to leave World Chat!"
     Already_Enabled: "{Prefix} &7You are already in world chat."
   Spy:
     Enabled: "{Prefix} &7Chat Radius spy has been &aEnabled."
