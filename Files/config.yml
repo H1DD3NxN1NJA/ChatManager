@@ -5,7 +5,7 @@
 #    If you need any plugin support, feel free to join our discord server
 #    or private message me H1DD3NxN1NJA on Spigot.
 #
-#    Discord Link: https://discord.gg/n9A9xtA
+#    Discord Link: https://discord.gg/mh7Ydaf
 #
 #=================================================================================================#
 #
@@ -19,6 +19,9 @@
 #      - 1.8 and older: http://docs.codelanx.com/Bukkit/1.8/org/bukkit/Sound.html
 #   
 #   3. All messages are in the Messages.yml file
+#
+#   4. Wiki
+#     - https://github.com/H1DD3NxN1NJA/ChatManager/wiki
 #
 #=================================================================================================#
   
@@ -145,6 +148,10 @@ Anti_Spam:
 
     #Prevent players from repeating the same commands.
     Block_Repetitive_Commands: true
+    
+    #Whitelisted commands that won't be effected by the anti spam.
+    Whitelist:
+    - "/spawn"
 
 #=================================================================================================#
 # Prevent players from swearing in chat, comamnds, and signs.
@@ -265,13 +272,13 @@ Banned_Commands:
   Executed_Command: kick {player} You are not allowed to use that command!
 
 #=================================================================================================#
-# Broadcast Commands
+# Broadcasting Commands
 #=================================================================================================#
 Broadcast_Commands:
 
   Command:
     
-    #/Bradcast Command
+    #Broadcast Command
     Broadcast:
     
       #The default prefix that goes infront of the broadcasted message.
@@ -284,7 +291,7 @@ Broadcast_Commands:
       #Set to '' to disable
       Sound: ''
       
-    #/Announce Command
+    #Announcement Command
     Announcement:
     
       #The sound that will be sent to everyone on the server when an announcement is sent.
@@ -293,13 +300,12 @@ Broadcast_Commands:
       
       #The message that will be sent to everyone on the server.
       Message:
-        - "&8------------------------------"
-        - "           &7. . .&6&lANNOUNCEMENT&7. . .   "
-        - "&8------------------------------"
+        - "&8&m--------------------------"
+        - "&e&lANNOUNCEMENT"
         - "{message}"
-        - "&8------------------------------"
+        - "&8&m--------------------------"
         
-    #/Warning Command
+    #Warning Command
     Warning:
     
       #The sound that will be sent to everyone on the server when a warning message is sent.
@@ -308,14 +314,14 @@ Broadcast_Commands:
       
       #The message that will be sent to everyone on the server.
       Message:
-        - "&8------------------------------"
-        - "           &7. . .&4&lWARNING&7. . .   "
-        - "&8------------------------------"
+        - "&8&m--------------------------"
+        - "&4&lWARNING"
         - "{message}"
-        - "&8------------------------------"
+        - "&8&m--------------------------"
         
 #=================================================================================================#
 # Per-Group chat formats. REQUIRES VAULT TO WORK!!!!!
+# How to use chat format: https://github.com/H1DD3NxN1NJA/ChatManager/wiki/Chat-Format
 # Available Placeholders: https://github.com/H1DD3NxN1NJA/ChatManager/wiki/Chat-Format#placeholders-top
 #=================================================================================================#
 Chat_Format:
@@ -339,6 +345,7 @@ Chat_Format:
       
 #=================================================================================================#
 # Players can only send messages to other players that are in range.
+# How to use chat radius: https://github.com/H1DD3NxN1NJA/ChatManager/wiki/Chat-Radius
 #=================================================================================================#
 Chat_Radius: 
 
@@ -406,7 +413,21 @@ Grammar:
 
   #Correct words from "i" to "I", "dont" to "don't", and many more pre-set words!
   Autocorrect:
+  
     Enable: true
+    
+#=================================================================================================#
+# Staff and Player List:
+#=================================================================================================#
+Lists:
+
+  Staff_List:
+    - "&7&m---------------&8[ &aStaff List &8]&7&m---------------"
+    - "&7Online Staff Members&7: {staff}"
+    
+  Player_List:
+    - "&7&m---------------&8[ &aPlayer List &8]&7&m---------------"
+    - "&7Online Players &a{server_online}&8/&a{server_max_players}&7: {players}"
 
 #=================================================================================================#
 # Logs
@@ -550,13 +571,10 @@ Private_Messages:
   #The sound thats played to the receiver
   #Do Sound: '' to disable
   Sound: ''
-
-#=================================================================================================#
-# Server Rules.
-#=================================================================================================#
-Rules:
-
-  Enable: true
+  
+  #This will either enable or disable the tooltip and click command feature.
+  #If disabled it will only send the format message.
+  Enable_JSON: true
 
 #=================================================================================================#
 # The server name used in {server_name} variable. Color codes are supported.
@@ -579,6 +597,13 @@ Staff_Chat:
   Enable: true
 
   Format: "&e[&bStaff-Chat&e] &a{player} &7> &b{message}"
+  
+  #A boss bar will appear when entering staff chat to show its enabled.
+  Boss_Bar:
+    
+    Enable: true
+    
+    Title: "&eStaff Chat"
   
 #=================================================================================================#
 # Checks if there is an available update for chat manager.
