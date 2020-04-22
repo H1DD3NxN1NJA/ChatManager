@@ -34,7 +34,7 @@ Auto_Broadcast:
         - "{Prefix} &aThis server is running the plugin ChatManager by H1DD3NxN1NJA"
         - "{Prefix} &bYou can edit these in the ChatManager > AutoBroadcast.yml"
       world_the_end:
-        - "{Prefix} &aThe end world is a scary place"
+        - "{Prefix} &aThe end is a scary place"
         - "{Prefix} &aWatch out for the ender dragon!"
         - "{Prefix} &cDon't make eye contact with the enderman!"
   Actionbar_Messages:
@@ -50,8 +50,17 @@ Auto_Broadcast:
     Enable: true
     Interval: 60
     Sound: ''
-    Title: "&cServer Name"
+    Title: "&cTitle"
     Messages:
       - "&7Auto-Broadcast title message."
+      - "&7Plugin created by H1DD3NxN1NJA."
+      - "&7Hello &c{player} &7there are &c{online} &7players online."
+  Bossbar_Messages: #1.9+
+    Enable: false
+    Interval: 60
+    Sound: ''
+    Bar_Time: 10 #How long the boss bar stays on for.
+    Messages:
+      - "&7Auto-Broadcast bossbar message."
       - "&7Plugin created by H1DD3NxN1NJA."
       - "&7Hello &c{player} &7there are &c{online} &7players online."
