@@ -7,25 +7,42 @@ softdepend: [PlaceholderAPI, Vault, Essentials, SuperVanish, DeluxeTags, Faction
 api-version: 1.13
 
 permissions:
+    chatmanager.chatradius.all:
+        description: Permission to access all chat radius channels.
+        default: false
+        children:
+            chatmanager.chatradius: true
+            chatmanager.chatradius.local: true
+            chatmanager.chatradius.global: true
+            chatmanager.chatradius.world: true
+            chatmanager.chatradius.spy: true
     chatmanager.bypass.all:
         description: Give players access to bypass every check.
         default: false
         children:
+            chatmanager.bypass.afk: true
             chatmanager.bypass.antiadvertising: true
             chatmanager.bypass.antibot: true
             chatmanager.bypass.antiswear: true
+            chatmanager.bypass.antiunicode: true
             chatmanager.bypass.bannedcommands: true
             chatmanager.bypass.caps: true
             chatmanager.bypass.chatdelay: true
             chatmanager.bypass.chatradius: true
             chatmanager.bypass.clearchat: true
+            chatmanager.bypass.clearchat.onjoin: true
+            chatmanager.bypass.coloncommands: true
             chatmanager.bypass.commanddelay: true
             chatmanager.bypass.commandspy: true
             chatmanager.bypass.dupe.chat: true
             chatmanager.bypass.dupe.command: true
             chatmanager.bypass.grammar: true
+            chatmanager.bypass.ignored: true
             chatmanager.bypass.mutechat: true
             chatmanager.bypass.socialspy: true
+            chatmanager.bypass.spectator: true
+            chatmanager.bypass.togglepm: true
+            chatmanager.bypass.vanish: true
     chatmanager.formats.all:
         description: Give players access to use all color and format codes in chat and on signs.
         default: false
@@ -42,31 +59,46 @@ permissions:
         description: Give players access to every command.
         default: false
         children:
-            chatmanager.antiSwear.add: true
-            chatmanager.antiSwear.list: true
-            chatmanager.antiSwear.remove: true
+            chatmanager.antiswear: true
+            chatmanager.antiswear.help: true
+            chatmanager.antiswear.add: true
+            chatmanager.antiswear.list: true
+            chatmanager.antiswear.remove: true
             chatmanager.autobroadcast: true
+            chatmanager.autobroadcast.help: true
             chatmanager.autobroadcast.add: true
             chatmanager.autobroadcast.create: true
             chatmanager.autobroadcast.list: true
-            chatmanager.bannedCommands.add: true
-            chatmanager.bannedCommands.list: true
-            chatmanager.bannedCommands.remove: true
+            chatmanager.bannedcommands: true
+            chatmanager.bannedcommands.help: true
+            chatmanager.bannedcommands.add: true
+            chatmanager.bannedcommands.list: true
+            chatmanager.bannedcommands.remove: true
             chatmanager.announcement: true
             chatmanager.broadcast: true
+            chatmanager.chatradius: true
+            chatmanager.chatradius.local: true
+            chatmanager.chatradius.global: true
+            chatmanager.chatradius.world: true
+            chatmanager.chatradius.spy: true
             chatmanager.clearchat: true
             chatmanager.commandcpy: true
+            chatmanager.message: true
+            chatmanager.message.self: true
             chatmanager.mutechat: true
+            chatmanager.mutechat.silent: true
             chatmanager.perworldchat: true
             chatmanager.ping: true
             chatmanager.ping.others: true
             chatmanager.preview.title: true
             chatmanager.preview.actionbar: true
-            chatmanager.privatemessage: true
             chatmanager.reload: true
+            chatmanager.reply: true
             chatmanager.rules: true
             cbatmanager.socialspy: true
             chatmanager.staffchat: true
+            chatmanager.togglechat: true
+            chatmanager.togglepm: true
             chatmanager.warning: true
     chatmanager.notify.all:
         description: Gets notified everytime a player breaks the rules.
@@ -74,6 +106,7 @@ permissions:
         children:
             chatmanager.notify.antiadvertising: true
             chatmanager.notify.antiswear: true
+            chatmanager.notify.antiunicode: true
             chatmanager.notify.bannedcommands: true
     chatmanager.*:
         description: Give players with op everything by default.
@@ -81,5 +114,8 @@ permissions:
         children:
             chatmanager.bypass.all: true
             chatmanager.commands.all: true
+            chatmanager.chatradius.all: true
             chatmanager.notify.all: true
             chatmanager.formats.all: true
+            chatmanager.global.chatradius: true
+            chatmanager.privatemessage.self: true
