@@ -72,6 +72,10 @@ Anti_Advertising:
     #Every time a player advertises in commands, their message will be logged in the Advertisements.txt file.
     Log_Advertisers: true
     
+    #If a player executes one of these commands with an advertisement in it, the command will not be blocked.
+    Whitelist:
+    - "/report"
+    
   Signs:
   
     #Block advertising on signs. 
@@ -362,6 +366,10 @@ Chat_Radius:
   #The prefix thats sent in global chat.
   Global_Chat_Prefix: "&7[&bGlobal&7]"
   
+  #If you put this symbol in front of your message, it will override any channel which you are in, 
+  #sending the message to all players in the server, then keeps you in global chat.
+  Global_Chat_Override_Symbol: "!"
+  
   #The prefix thats sent in world chat.
   World_Chat_Prefix: "&7[&dWorld&7]"
   
@@ -492,6 +500,9 @@ Mentions:
   #The sound thats played to the player thats mentioned. Do Sound: '' to disable.
   Sound: ''
   
+  #The symbol players have to use to tag other players, Leave it blank for nothing.
+  Tag_Symbol: "@"
+
   #The title message thats sent to the player thats mentioned.
   Title:
     Enable: true
