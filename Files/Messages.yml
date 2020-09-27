@@ -75,11 +75,16 @@ Anti_Swear:
   Signs:
     Message: "{Prefix} &cPlease do not curse on signs."
     Notify_Staff_Format: "&7[Anti-Swear Signs] &f{player}: &7{message}"
-  Word:
-    Added: "{Prefix} &7You added the word &c{word} &7to the list of swear words."
-    Exists: "{Prefix} &7The word &c{word} &7is already added to the list of swear words."
-    Removed: "{Prefix} &7You removed the word &c{word} &7from the list of swear words."
-    Not_Found: "{Prefix} &7The word &c{word} &7is not in the list of swear words."
+  Blacklisted_Word:
+    Added: "{Prefix} &7You added the word &c{word} &7to the anti swears blacklist."
+    Exists: "{Prefix} &7The word &c{word} &7is already added to the anti swears blacklist."
+    Removed: "{Prefix} &7You removed the word &c{word} &7from the anti swears blacklist."
+    Not_Found: "{Prefix} &7The word &c{word} &7is not in the anti swears blacklist."
+  Whitelisted_Word:
+    Added: "{Prefix} &7You added the word &c{word} &7to the anti swears whitelist."
+    Exists: "{Prefix} &7The word &c{word} &7is already added to the anti swears whitelist."
+    Removed: "{Prefix} &7You removed the word &c{word} &7from the anti swears whitelist."
+    Not_Found: "{Prefix} &7The word &c{word} &7is not in the anti swears whitelist."
     
 #=================================================================================================#
 # Anti-Unicode Messages
