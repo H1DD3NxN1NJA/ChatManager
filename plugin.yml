@@ -1,7 +1,7 @@
 name: ChatManager
 description: Chat management plugin
 version: ${project.version}
-main: me.H1DD3NxN1NJA.ChatManager.Main
+main: me.h1dd3nxn1nja.chatmanager.main
 author: H1DD3NxN1NJA
 softdepend: [PlaceholderAPI, Vault, Essentials, SuperVanish, DeluxeTags, Factions]
 api-version: 1.13
@@ -14,6 +14,7 @@ permissions:
             chatmanager.chatradius: true
             chatmanager.chatradius.local: true
             chatmanager.chatradius.global: true
+            chatmanager.chatradius.global.override: true
             chatmanager.chatradius.world: true
             chatmanager.chatradius.spy: true
     chatmanager.bypass.all:
@@ -82,7 +83,12 @@ permissions:
             chatmanager.chatradius.world: true
             chatmanager.chatradius.spy: true
             chatmanager.clearchat: true
-            chatmanager.commandcpy: true
+            chatmanager.colors: true
+            chatmanager.commandspy: true
+            chatmanager.debug: true
+            chatmanager.formats: true
+            chatmanager.lists.players: true
+            chatmanager.lists.staff: true
             chatmanager.message: true
             chatmanager.message.self: true
             chatmanager.mutechat: true
