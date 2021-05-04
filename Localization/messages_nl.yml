@@ -1,0 +1,184 @@
+#=================================================================================================#
+#                                 Main Messages File of Chat Manager
+#=================================================================================================#
+#
+#    If you need any plugin support, feel free to join our discord server
+#    or private message me H1DD3NxN1NJA on Spigot.
+#
+#    Discord Link: https://discord.gg/n9A9xtA
+#
+#=================================================================================================#
+#
+# Information:
+#
+#   Color Codes are supported with the "&" character.
+#    - To view a list of COLOR CODES you can do /Colors in-game.
+#    - To view a list of FORMAT CODES you can do /Formats in-game.
+#
+#=================================================================================================#
+
+Message:
+  Prefix: "&b[&6Chat-Manager&b]&r"
+  No_Permission: "{Prefix} Je hebt het recht niet om dit te doen.
+  Player_Not_Found: "{Prefix} &7Speler &c{target} &7 niet gevonden."
+  Reload: "{Prefix} De configuratie is opnieuw geladen."
+
+#=================================================================================================#
+# Anti-Reclame Boodschappen
+#=================================================================================================#
+Anti_Advertising:
+  Chat:
+    Message: "{Prefix} Chat reclame is niet toegestaan! Admin bericht verzonden."
+    Notify_Staff_Format: "&7[Anti-Advertise Chat] &f{player}: &7{boodschap}"
+  Commands's:
+    Message: "{Prefix} {Prefix} &cOmleiding in commando's is niet toegestaan! Admin bericht verzonden."
+    Notify_Staff_Format: "&7[Anti-Advertise Commando's] &f{player}: &7{boodschap}"
+  Signs:
+    Message: "{Prefix} &cOpschriften op borden zijn niet toegestaan! Een bericht naar de beheerders is verstuurd."
+    Notify_Staff_Format: "&7[Anti-Aankondigingstekens] &f{player}: &7{boodschap}"
+  
+#=================================================================================================#
+# Anti-Bot Berichten
+#=================================================================================================#
+Anti_Bot:
+  Deny_Chat_Message: "{Prefix} "Je moet een blok verplaatsen om naar de chat te schrijven."
+  Deny_Command_Message: "{Prefix} Je moet één blok verplaatsen om commando's te schrijven."
+  
+#=================================================================================================#
+# Anti-Caps Message
+#=================================================================================================#
+Anti_Caps:
+  Message_Chat: "{Prefix} Gelieve geen CAPS te gebruiken.
+  Message_Commands: "{Prefix} Gebruik alsjeblieft geen CAPS in commando's.
+  
+#=================================================================================================#
+# Anti-Spam Berichten
+#=================================================================================================#
+Anti_Spam:
+  Chat:
+    Repetitive_Message: "{Prefix} "Schrijf alsjeblieft niet dezelfde berichten."
+    Delay_Message: "{Prefix} &7Wacht &c{Tijd} seconden &7 voor je het bericht verstuurt."
+  Command:
+    Repetitive_Message: "{Prefix} Gebruik alsjeblieft niet dezelfde commando's.
+    Delay_Message: "{Prefix} Wacht &c{Tijd} seconden &7 voor je commando's schrijft."
+
+#=================================================================================================#
+# Anti-Swear Messages
+#=================================================================================================#
+Antizweer:
+  Chat:
+    Message: "{Prefix} "Vloek niet in de chat."
+    Notify_Staff_Format: "&7[Anti-Swear Chat] &f{player}: &7{boodschap}"
+  Commands:
+    Message: "{Prefix} "Vloek niet in bevelen."
+    Notify_Staff_Format: "&7[Anti-Swear Commands] &f{player}: &7{boodschap}"
+  Signs:
+    Message: "{Prefix} "Vloek niet op de borden."
+    Notify_Staff_Format: "&7[Anti-Scheldtekens] &f{player}: &7{boodschap}"
+  Word:
+    Added: "{Prefix} Je hebt &cword} &7 toegevoegd aan de lijst van scheldwoorden."
+    Exists: "{Prefix} Het woord staat al op de scheldlijst.
+    Removed: "{Prefix} Je hebt het woord 'woord' geschrapt van de lijst met scheldwoorden.
+    Not_Found: "{Prefix} &7Het woord &c{word} &7 kwam niet voor in de lijst van scheldwoorden."
+    
+#=================================================================================================#
+# Anti-Unicode Berichten
+#=================================================================================================#
+Anti_Unicode:
+  Message: "{Prefix} Gebruik alsjeblieft geen speciale tekens in de chat.
+  Notify_Staff_Format: "&7[Anti-Unicode] &f{player}: &7{boodschap}"
+    
+#=================================================================================================#
+# Auto-Broadcast Berichten
+#=================================================================================================#
+Auto_Broadcast:
+  List: "&c{world} &7auto-broadcast bericht:"
+  Added: "{Prefix} &r{message} &7Broadcast message: &c'{world}'&7!"
+  Created: "{Prefix} &7Wereld gecreëerd: &c'{wereld}'&7met een bericht: &r{message}&7."
+  
+#=================================================================================================#
+# Verboden Commando's Berichten
+#=================================================================================================#
+Banned_Commands:
+  Message: "{Prefix} U hebt geen rechten om dit commando uit te voeren: &7/{command}&c."
+  Command_Added: "{Prefix} &7Je hebt een commando toegevoegd: &c{command} &7 aan de lijst van geblokkeerde commando's."
+  Command_Exists: "{Prefix} &7Command: &c{command} &7bestaat al in de lijst van geblokkeerde commando's."
+  Command_Removed: "{Prefix} {Prefix} &7Je hebt het commando verwijderd: &c{command} &7uit de lijst van geblokkeerde commando's."
+  Command_Not_Found: "{Prefix} &7Command: &c{command} &7 niet gevonden in de lijst van geblokkeerde commando's."
+  Notify_Staff_Format: "&7[Blocked-Cmd] &f{player}: &7{command}"
+  
+#=================================================================================================#
+# Clear Chat Messages
+#=================================================================================================#
+Clear_Chat:
+  Staff_Message:"{Prefix} De &eChat is gewist door de speler: {speler}."
+  Broadcast_Message:
+  - "&f*&c&m--------------------------------------------&f*"
+  - "&eChat is gewist door speler: {player}"
+  - "&f*&c&m--------------------------------------------&f*"
+  
+#=================================================================================================#
+# Command Spy Berichten
+#=================================================================================================#
+Command_Spy:
+  Format: "&7[Command-Spy] {speler}: &b{command}"
+  Enabled: "{Prefix} &a.Command Spy ingeschakeld."
+  Disabled: "{Prefix} &Command Spy is uitgeschakeld."
+  
+#=================================================================================================#
+# Mute Chat Messages
+#=================================================================================================#
+Mute_Chat:
+  Denied_Message: "{Prefix} {Prefix} "U kunt niet chatten."
+  Broadcast_Messages:
+    Enabled: "{Prefix} Chat is ingeschakeld: {player}."
+    Disabled: "{Prefix} {Prefix} &Chat is uitgeschakeld: {speler}."
+  Blocked_Commands:
+    Message: "{Prefix} U kunt dit commando niet gebruiken als u een geluiddemper hebt.
+    
+#=================================================================================================#
+# Per-Wereld Chat Berichten
+#=================================================================================================#
+Per_World_Chat:
+  Bypass_Enabled: "{Prefix} "&aPer-world chat bypass is ingeschakeld."
+  Bypass_Disabled: "{Prefix} &cPer-world chat bypass is uitgeschakeld."
+  
+#=================================================================================================#
+# Private Message Messages
+#=================================================================================================#
+Private_Message:
+  Recipient_Not_Found: "{Prefix} {Prefix}."
+  Toggled: "{Prefix} "Momenteel kan deze speler geen berichten ontvangen."
+  Ignored: "{Prefix} &c{target} &7 negeert u momenteel en kan uw bericht niet ontvangen."
+  Self: "{Prefix} "Je kunt geen berichten naar jezelf sturen."
+  AFK: "{Prefix} &c{target} &7self in AFK."
+  
+#=================================================================================================#
+# Social Spy Messages
+#=================================================================================================#
+Social_Spy:
+  Format: "&b&l(*)&bSpy &f&l[&e{player} &d-> &e{receiver}&f&l] &b{message}"
+  Enabled: "{Prefix} &aSocial Spy ingeschakeld."
+  Disabled: "{Prefix} &cSocial Spy is uitgeschakeld."
+  
+#=================================================================================================#
+# Staff Chat Berichten
+#=================================================================================================#
+Staff_Chat:
+  Enabled: "{Prefix} "Personeelschat ingeschakeld."
+  Disabled: "{Prefix} "Personeelschat is uitgeschakeld."
+  
+#=================================================================================================#
+# ToggleChat Messages
+#=================================================================================================#
+Toggle_Chat:
+  Enabled: "{Prefix} &aToggle chat is ingeschakeld, u zult geen chatberichten ontvangen."
+  Disabkled: "{Prefix} &cToggle chat is uitgeschakeld, u kunt berichten van de chat ontvangen."
+  
+#=================================================================================================#
+# TogglePM Messages
+#=================================================================================================#
+TogglePM:
+  Enabled: "{Prefix} 
+  Disabled: "{Prefix} &cTogglePM был выключен.
+
