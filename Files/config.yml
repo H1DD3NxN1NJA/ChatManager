@@ -13,15 +13,16 @@
 #   1. Color Codes are supported with the "&" character.
 #      - To view a list of COLOR CODES you can do /Colors in-game.
 #      - To view a list of FORMAT CODES you can do /Formats in-game.
+#
+#   2. HEX Codes are supported with the #000000 format.
 #   
-#   2. Sound List
+#   3. Sound List
 #      - 1.9 and newer: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
 #      - 1.8 and older: http://docs.codelanx.com/Bukkit/1.8/org/bukkit/Sound.html
 #   
-#   3. All messages are in the Messages.yml file
+#   4. All messages can be changed in the Messages.yml file.
 #
-#   4. Wiki
-#     - https://github.com/H1DD3NxN1NJA/ChatManager/wiki
+#   5. Wiki: https://github.com/H1DD3NxN1NJA/ChatManager/wiki
 #
 #=================================================================================================#
   
@@ -170,6 +171,9 @@ Anti_Swear:
     #Should the anti-swear checker be more sensitive? This may cause false positives.
     Increase_Sensitivity: false
     
+    #Should chat manager block the message from being sent in chat?
+    Block_Message: true
+    
     #Should staff get notified when a player swears in chat?
     Notify_Staff: true
     
@@ -190,6 +194,9 @@ Anti_Swear:
     
     #Should the anti-swear checker be more sensitive? This may cause false positives.
     Increase_Sensitivity: false
+    
+    #Should chat manager block the command from being sent?
+    Block_Command: true
   
     #If a player executes one of these commands with a swear word in it, the command will not be blocked.
     Whitelisted_Commands:
@@ -217,6 +224,9 @@ Anti_Swear:
     
     #Should the anti-swear checker be more sensitive? This may cause false positives.
     Increase_Sensitivity: false
+    
+    #Should chat manager block the message from being added to the sign?
+    Block_Sign: true
   
     #Should staff get notified when a player swears on signs?
     Notify_Staff: true
@@ -333,21 +343,23 @@ Chat_Format:
   Enable: true
 
   #This will only be used if the players permission group isn't on the bottom of this section.
-  Default_Format: "&8[&7Default&8] &7{player} &9> &7{message}"
+  Default_Format: "{vault_prefix} &7{player} &9> &7{message}"
 
   #Chat Formats are set depending on what permission group the player is in.
   #If a player is in the permission group named "Default" they will have the default chat format.
   Groups:
-    Default: #The name of the group, this is case sensitive!
+    default: #The name of the group, this is case sensitive!
       Format: "&8[&7Default&8] &7{player} &9> &7{message}" #The format you want the group to have.
-    VIP:
+    vip:
       Format: "&8[&5VIP&8] &7{displayname} &9> &7{message}"
-    Moderator:
+    moderator:
       Format: "&a[&3Moderator&a] &b{player} &9> &e{message}"
-    Owner:
+    admin:
+      Format: "&8[&cAdmin&8] &4{player} &9> &a{message}"
+    owner:
       Format: "&b[&6Owner&b] {player} &9> &e{message}"
-      
-#=================================================================================================#
+ 
+#=================================================================================================#     
 # Players can only send messages to other players that are in range.
 # How to use chat radius: https://github.com/H1DD3NxN1NJA/ChatManager/wiki/Chat-Radius
 #=================================================================================================#
@@ -360,18 +372,35 @@ Chat_Radius:
   #Chat Channels: Local, Global, World.
   Default_Channel: Local
   
-  #The prefix thats sent in local chat.
-  Local_Chat_Prefix: "&7[&cLocal&7]"
-  
-  #The prefix thats sent in global chat.
-  Global_Chat_Prefix: "&7[&bGlobal&7]"
-  
-  #If you put this symbol in front of your message, it will override any channel which you are in, 
-  #sending the message to all players in the server, then keeps you in global chat.
-  Global_Chat_Override_Symbol: "!"
-  
-  #The prefix thats sent in world chat.
-  World_Chat_Prefix: "&7[&dWorld&7]"
+  Local_Chat:
+
+    #The prefix thats sent in local chat.
+    Prefix: "&7[&cLocal&7]"
+
+    #If you put this symbol in front of your message, it will override any channel which you are in, 
+    #sending the message to all players in the server, then keeps you in local chat.
+    #Do Override_Symbol: '' to disable.
+    Override_Symbol: "#"
+ 
+  Global_Chat:
+
+    #The prefix thats sent in global chat.
+    Prefix: "&7[&bGlobal&7]"
+
+    #If you put this symbol in front of your message, it will override any channel which you are in, 
+    #sending the message to all players in the server, then keeps you in global chat.
+    #Do Override_Symbol: '' to disable.
+    Override_Symbol: "!"
+ 
+  World_Chat:
+
+    #The prefix thats sent in world chat.
+    Prefix: "&7[&dWorld&7]"
+
+    #If you put this symbol in front of your message, it will override any channel which you are in, 
+    #sending the message to all players in the server, then keeps you in world chat.
+    #Do Override_Symbol: '' to disable.
+    Override_Symbol: "$"
   
   #The maximum distance players will receive the senders messages.
   Block_Distance: 250
@@ -383,12 +412,6 @@ Chat_Radius:
 # Clear Chat
 #=================================================================================================#
 Clear_Chat:
-
-  #Should the clear chat message be broadcasted to everyone on the server?
-  Broadcast: true
-
-  #Should staff get notified when chat is cleared?
-  Notify_Staff: false
   
   #Clear players chat when they join the server.
   Clear_On_Join: true
@@ -402,7 +425,7 @@ Clear_Chat:
 Command_Spy:
 
   #Turn on command spy when players with the correct permission join the server.
-  Enable_On_Join: true
+  Enable_On_Join: false
   
   #Commands that wont be shown in command spy.
   Blacklist_Commands:
@@ -456,39 +479,137 @@ Logs:
   Blacklist_Commands:
   - "/login"
   - "/register"
-
+  
 #=================================================================================================#
-# First Join, Join, and Quit Messages.
+# First Join, Join, and Quit Text, Actionbar, and Title Messages.
+# Group messages allows you to set per group join and quit messages.
+# To use them add the group and give that group the permission...
+# Chatmanager.join.{group name}
+# Chatmanager.quit.{group name}
 #=================================================================================================#
 Messages:
-
-  Enable: true
-
-  First_Join_Message: "&eWelcome &b{player} &eto the server!"
-
-  Join_Message: "&b{player} &ejoined the server."
-
-  Quit_Message: "&b{player} &eleft the server."
-
-Actionbar_Messages:
-
-  Enable: true
   
-  First_Join_Message: "&eWelcome &b{player} &eto {server_name}!"
-
-  Join_Message: "&eWelcome back &b{player}!"
-
-Title_Messages:
-
-  Enable: true
+  First_Join:
   
-  First_Join_Title:
-    Header: "&eWelcome"
-    Footer: "&b{player} to {server_name}"
+    Welcome_Message:
     
-  Join_Title:
-    Header: "&eWelcome Back"
-    Footer: "&b{player} to {server_name}"
+      Enable: true
+    
+      #The sound thats played to the entire server.
+      #Do Sound: '' to disable
+      Sound: ''
+    
+      First_Join_Message: "&eWelcome to &b{server_name} {vault_prefix}{player}&e!"
+      
+    Actionbar_Message:
+    
+      Enable: true
+      
+      First_Join_Message: "&eWelcome to &b{server_name} {vault_prefix}{player}&e!"
+        
+    Title_Message:
+    
+      Enable: true
+      
+      #The time it takes for the title to fade into the screen.
+      Fade_In: 40
+      
+      #The time it takes for the title to stay on the screen.
+      Stay: 20
+      
+      #The time it takes for the title to fade out of the screen.
+      Fade_Out: 40
+      
+      First_Join_Message:
+          
+        Header: "&eWelcome"
+          
+        Footer: "&b{player} to {server_name}"
+       
+  Join_Messages:
+  
+    Enable: true
+    
+    Sound: ''
+    
+    #Players that don't have a permission set for group messages
+    #will send this join message.
+    Default_Message: "&b{player} &ejoined the server"
+    
+    Group_Messages:
+      
+      #Format: {group name}: {message}
+      Default: "&b{player} &ejoined the server"
+        
+      Donator: "&b{player} &ejoined the server"
+      
+      Staff: "&b{player} &ejoined the server"
+      
+    Actionbar_Messages:
+    
+      Enable: true
+      
+      Default_Message: "&eWelcome back to &b{server_name} {vault_prefix}{player}&e!"
+      
+      Group_Messages:
+    
+        Default: "&eWelcome back to &b{server_name} {vault_prefix}{player}&e!"
+        
+        Donator: "&eWelcome back to &b{server_name} {vault_prefix}{player}&e!"
+        
+        Staff: "&eWelcome back to &b{server_name} {vault_prefix}{player}&e!"
+        
+    Title_Messages:
+    
+      Enable: true
+      
+      Fade_In: 40
+      
+      Stay: 20
+      
+      Fade_Out: 40
+      
+      Default_Message:
+      
+        Header: "&eWelcome Back"
+          
+        Footer: "&b{player} to {server_name}"
+      
+      Group_Messages:
+      
+        Default:
+          
+          Header: "&eWelcome Back"
+          
+          Footer: "&b{player} to {server_name}"
+          
+        Donator:
+        
+          Header: "&eWelcome Back"
+          
+          Footer: "&b{player} to {server_name}"
+          
+        Staff:
+        
+          Header: "&eWelcome Back"
+          
+          Footer: "&b{player} to {server_name}"
+        
+  Quit_Messages:
+  
+    Enable: true
+    
+    Sound: ''
+    
+    Default_Message: "&b{player} &eleft the server"
+    
+    Group_Messages:
+    
+      Default: "&b{player} &eleft the server"
+        
+      Donator: "&b{player} &eleft the server"
+        
+      Staff: "&b{player} &eleft the server"
     
 #=================================================================================================#
 # When a player mentions another players name.
@@ -502,6 +623,10 @@ Mentions:
   
   #The symbol players have to use to tag other players, Leave it blank for nothing.
   Tag_Symbol: "@"
+  
+  #The color the players name will be highlighted as when mentioned in chat.
+  #To disable make it Mention_Color: ""
+  Mention_Color: ""
 
   #The title message thats sent to the player thats mentioned.
   Title:
@@ -551,10 +676,29 @@ Mute_Chat:
 
 #=================================================================================================#
 # Players can only talk to other players that are in the same world as them!
+# Group worlds allows you to allow specific worlds to share the same chat.
+# If a world isn't listed in the group worlds players can only talk to each other in that world.
+# World names are CASE SENSITIVE. Please spell it correctly for it to work.
+# If group worlds are disabled and per world chat is enabled players can only talk to each other in
+# the world they are located in.
 #=================================================================================================#
 Per_World_Chat:
 
   Enable: false
+  
+  Group_Worlds:
+  
+    Enable: false
+    
+    Worlds:
+      1:
+      - "world"
+      - "world_nether"
+      - "world_the_end"
+      2:
+      - "Test1"
+      - "Test2"
+      - "Test3"
 
 #=================================================================================================#
 # Private messages allow you to secretly message another player without everyone else seeing.
@@ -583,14 +727,37 @@ Private_Messages:
   #Do Sound: '' to disable
   Sound: ''
   
-  #This will either enable or disable the tooltip and click command feature.
+  #This will enable or disable the tooltip and click command feature.
   #If disabled it will only send the format message.
-  Enable_JSON: true
+  Enable_JSON: false
 
 #=================================================================================================#
-# The server name used in {server_name} variable. Color codes are supported.
+# The server name used in {server_name} variable.
 #=================================================================================================#
 Server_Name: "Server Name"
+
+#=================================================================================================#
+# Server Rules. You can add as many rules as you want.
+#=================================================================================================#
+Server_Rules:
+  
+  Rules:
+  
+    1:
+      - "&7&m----------&8[ &aServer Rules Page 1/3 &8]&7&m----------"
+      - "&aNo Hacking"
+      - "&aNo DDOS Threats"
+      - "&aBe Kind to all players and staff"
+    2:
+      - "&7&m----------&8[ &aServer Rules Page 2/3 &8]&7&m----------"
+      - "&aNo swearing anywhere at anytime!"
+      - "&aDo NOT abusing caps!"
+      - "&aNo Advertising any other minecraft servers!"
+    3:
+      - "&7&m----------&8[ &aServer Rules Page 3/3 &8]&7&m----------"
+      - "&aDo not use any special characters in chat."
+      - "&aDo not ask for staff."
+      - "&aDo not spam in chat."
   
 #=================================================================================================#
 # Staff can see what players type in certain commands.
@@ -607,12 +774,12 @@ Staff_Chat:
 
   Enable: true
 
-  Format: "&e[&bStaff-Chat&e] &a{player} &7> &b{message}"
+  Format: "&e[&bStaffChat&e] &a{player} &7> &b{message}"
   
   #A boss bar will appear when entering staff chat to show its enabled.
   Boss_Bar:
     
-    Enable: true
+    Enable: false
     
     Title: "&eStaff Chat"
   
