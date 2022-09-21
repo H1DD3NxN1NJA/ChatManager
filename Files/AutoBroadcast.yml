@@ -23,20 +23,13 @@ Auto_Broadcast:
       world:
         - "{Prefix} &aWelcome to the server!"
         - "{Prefix} &aHope you enjoy our server!"
-        - "{Prefix} &aJoin our discord <Link>"
+        - "{Prefix} &aJoin our discord https://discord.gg/gyBSar8Z"
         - "{Prefix} &aThis server is running the plugin ChatManager by H1DD3NxN1NJA"
         - "{Prefix} &bYou can edit these in the ChatManager > AutoBroadcast.yml"
-      world_nether:
-        - "{Prefix} &7The nether is a scary place"
-        - "{Prefix} &aWelcome to the server!"
-        - "{Prefix} &aHope you enjoy our server!"
-        - "{Prefix} &aJoin our discord <Link>"
+     
+        - "{Prefix} &aJoin our discord https://discord.gg/gyBSar8Z"
         - "{Prefix} &aThis server is running the plugin ChatManager by H1DD3NxN1NJA"
         - "{Prefix} &bYou can edit these in the ChatManager > AutoBroadcast.yml"
-      world_the_end:
-        - "{Prefix} &aThe end is a scary place"
-        - "{Prefix} &aWatch out for the ender dragon!"
-        - "{Prefix} &cDon't make eye contact with the enderman!"
   Actionbar_Messages:
     Enable: true
     Interval: 60
@@ -54,7 +47,6 @@ Auto_Broadcast:
     Messages:
       - "&7Auto-Broadcast title message."
       - "&7Plugin created by H1DD3NxN1NJA."
-      - "&7Hello &c{player} &7there are &c{online} &7players online."
   Bossbar_Messages: #1.9+
     Enable: false
     Interval: 60
@@ -63,4 +55,3 @@ Auto_Broadcast:
     Messages:
       - "&7Auto-Broadcast bossbar message."
       - "&7Plugin created by H1DD3NxN1NJA."
-      - "&7Hello &c{player} &7there are &c{online} &7players online."
